@@ -1,0 +1,2565 @@
+@define-color destructive_bg_color @red_4;
+@define-color destructive_fg_color white;
+@define-color success_bg_color @green_5;
+@define-color success_fg_color white;
+@define-color warning_bg_color #cd9309;
+@define-color warning_fg_color RGB(0 0 0/80%);
+@define-color error_bg_color @red_4;
+@define-color error_fg_color white;
+@define-color accent_color oklab(from @accent_bg_color max(l, 0.85) a b);
+@define-color destructive_color oklab(from @destructive_bg_color max(l, 0.85) a b);
+@define-color success_color oklab(from @success_bg_color max(l, 0.85) a b);
+@define-color warning_color oklab(from @warning_bg_color max(l, 0.85) a b);
+@define-color error_color oklab(from @error_bg_color max(l, 0.85) a b);
+@define-color window_bg_color #222226;
+@define-color window_fg_color white;
+@define-color view_bg_color #1d1d20;
+@define-color view_fg_color white;
+@define-color headerbar_bg_color #2e2e32;
+@define-color headerbar_fg_color white;
+@define-color headerbar_border_color white;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color RGB(0 0 6/36%);
+@define-color headerbar_darker_shade_color RGB(0 0 12/90%);
+@define-color sidebar_bg_color #2e2e32;
+@define-color sidebar_fg_color white;
+@define-color sidebar_backdrop_color #28282c;
+@define-color sidebar_shade_color RGB(0 0 6/25%);
+@define-color sidebar_border_color RGB(0 0 6/36%);
+@define-color secondary_sidebar_bg_color #28282c;
+@define-color secondary_sidebar_fg_color white;
+@define-color secondary_sidebar_backdrop_color #252529;
+@define-color secondary_sidebar_shade_color RGB(0 0 6/25%);
+@define-color secondary_sidebar_border_color RGB(0 0 6/36%);
+@define-color card_bg_color RGB(255 255 255/8%);
+@define-color card_fg_color white;
+@define-color card_shade_color RGB(0 0 6/36%);
+@define-color dialog_bg_color #36363a;
+@define-color dialog_fg_color white;
+@define-color popover_bg_color #36363a;
+@define-color popover_fg_color white;
+@define-color popover_shade_color RGB(0 0 6/25%);
+@define-color thumbnail_bg_color #39393d;
+@define-color thumbnail_fg_color white;
+@define-color shade_color RGB(0 0 6/25%);
+@define-color scrollbar_outline_color RGB(0 0 12/95%);
+:root {
+  --standalone-color-oklab: max(l, 0.85) a b;
+  --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
+  --destructive-color: oklab(from var(--destructive-bg-color) var(--standalone-color-oklab));
+  --success-color:     oklab(from var(--success-bg-color) var(--standalone-color-oklab));
+  --warning-color:     oklab(from var(--warning-bg-color) var(--standalone-color-oklab));
+  --error-color:       oklab(from var(--error-bg-color) var(--standalone-color-oklab));
+  --active-toggle-bg-color: rgb(255 255 255 / 20%);
+  --active-toggle-fg-color: #ffffff;
+  --overview-bg-color:      #28282c;
+  --overview-fg-color:      #ffffff; }
+
+* {
+  border-radius: 20px; }
+
+window {
+  border-radius: 30px;
+  padding: 10px; }
+
+.maximized window {
+  border-radius: 0px;
+  padding: 10px; }
+
+window.maximized {
+  border-radius: 0px;
+  padding: 10px; }
+
+button {
+  border-radius: 9999px; }
+
+/* More customizations */
+/* GTK3 */
+button.titlebutton {
+  color: transparent;
+  min-width: 12px;
+  min-height: 12px;
+  padding: 0;
+  margin: 0 2px;
+  box-shadow: none; }
+
+button.titlebutton:backdrop {
+  opacity: 0.5; }
+
+/*****************
+   * Title buttons *
+   *****************/
+.raven .expander-button,
+.raven .raven-header:not(.top) button.image-button,
+widget > box.terminal-titlebar > button.image-button,
+widget > box.terminal-titlebar > button.image-button.toggle,
+.terminix-session-sidebar button.tilix-sidebar-close-button,
+.tilix-session-sidebar button.tilix-sidebar-close-button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button,
+.nautilus-window headerbar > revealer > button,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton,
+headerbar button.titlebutton,
+.csd headerbar button.titlebutton,
+.csd headerbar.default-decoration button.titlebutton,
+.titlebar button.titlebutton,
+.csd .titlebar button.titlebutton,
+.titlebar.default-decoration button.titlebutton,
+.csd .titlebar.default-decoration button.titlebutton,
+row button.image-button,
+check,
+radio,
+headerbar.default-decoration button.titlebutton,
+headerbar button.suggested-action,
+headerbar button.destructive-action,
+headerbar button:not(.suggested-action):not(.destructive-action),
+button.close,
+button.circular {
+  border-radius: 9999px; }
+
+button.image-button.toggle {
+  margin-right: -12px; }
+
+menubutton > button.image-button.toggle {
+  margin-right: -10px; }
+
+headerbar,
+.titlebar {
+  margin-top: -1px;
+  padding: 0 12px 0 0; }
+
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close,
+headerbar button.titlebutton.close,
+.titlebar button.titlebutton.close {
+  min-width: 12px;
+  min-height: 12px;
+  padding: 0;
+  margin: 0 2px;
+  color: transparent;
+  background-color: #ff4245;
+  box-shadow: none; }
+
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.maximize,
+headerbar button.titlebutton.maximize,
+.titlebar button.titlebutton.maximize {
+  min-width: 12px;
+  min-height: 12px;
+  padding: 0;
+  margin: 0 2px;
+  color: transparent;
+  background-color: #30d158;
+  box-shadow: none; }
+
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.minimize,
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.minimize {
+  min-width: 12px;
+  min-height: 12px;
+  padding: 0;
+  margin: 0 2px;
+  color: transparent;
+  background-color: #ffd600;
+  box-shadow: none; }
+
+#MozillaGtkWidget.background
+headerbar.titlebar.default-decoration
+button.titlebutton.close:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:hover,
+headerbar button.titlebutton.close:hover,
+.csd headerbar button.titlebutton.close:hover,
+headerbar.default-decoration button.titlebutton.close:hover,
+.csd headerbar.default-decoration button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover,
+.csd .titlebar button.titlebutton.close:hover,
+.titlebar.default-decoration button.titlebutton.close:hover,
+.csd .titlebar.default-decoration button.titlebutton.close:hover {
+  padding: 2px;
+  margin: -2px 0;
+  background-color: #f25056;
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: none; }
+
+#MozillaGtkWidget.background
+headerbar.titlebar.default-decoration
+button.titlebutton.maximize:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.maximize:hover,
+headerbar button.titlebutton.maximize:hover,
+.csd headerbar button.titlebutton.maximize:hover,
+headerbar.default-decoration button.titlebutton.maximize:hover,
+.csd headerbar.default-decoration button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover,
+.csd .titlebar button.titlebutton.maximize:hover,
+.titlebar.default-decoration button.titlebutton.maximize:hover,
+.csd .titlebar.default-decoration button.titlebutton.maximize:hover {
+  padding: 2px;
+  margin: -2px 0;
+  background-color: #39ea49;
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: none; }
+
+#MozillaGtkWidget.background
+headerbar.titlebar.default-decoration
+button.titlebutton.minimize:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.minimize:hover,
+headerbar button.titlebutton.minimize:hover,
+.csd headerbar button.titlebutton.minimize:hover,
+headerbar.default-decoration button.titlebutton.minimize:hover,
+.csd headerbar.default-decoration button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover,
+.csd .titlebar button.titlebutton.minimize:hover,
+.titlebar.default-decoration button.titlebutton.minimize:hover,
+.csd .titlebar.default-decoration button.titlebutton.minimize:hover {
+  padding: 2px;
+  margin: -2px 0;
+  background-color: #fac536;
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: none; }
+
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.maximize:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.minimize:hover,
+headerbar button.titlebutton.close:hover,
+headerbar button.titlebutton.close:backdrop:hover,
+headerbar button.titlebutton.maximize:hover,
+headerbar button.titlebutton.maximize:backdrop:hover,
+headerbar button.titlebutton.minimize:hover,
+headerbar button.titlebutton.minimize:backdrop:hover,
+.csd headerbar button.titlebutton.close:hover,
+.csd headerbar button.titlebutton.close:backdrop:hover,
+.csd headerbar button.titlebutton.maximize:hover,
+.csd headerbar button.titlebutton.maximize:backdrop:hover,
+.csd headerbar button.titlebutton.minimize:hover,
+.csd headerbar button.titlebutton.minimize:backdrop:hover,
+headerbar.default-decoration button.titlebutton.close:hover,
+headerbar.default-decoration button.titlebutton.close:backdrop:hover,
+headerbar.default-decoration button.titlebutton.maximize:hover,
+headerbar.default-decoration button.titlebutton.maximize:backdrop:hover,
+headerbar.default-decoration button.titlebutton.minimize:hover,
+headerbar.default-decoration button.titlebutton.minimize:backdrop:hover,
+.csd headerbar.default-decoration button.titlebutton.close:hover,
+.csd headerbar.default-decoration button.titlebutton.close:backdrop:hover,
+.csd headerbar.default-decoration button.titlebutton.maximize:hover,
+.csd headerbar.default-decoration button.titlebutton.maximize:backdrop:hover,
+.csd headerbar.default-decoration button.titlebutton.minimize:hover,
+.csd headerbar.default-decoration button.titlebutton.minimize:backdrop:hover,
+.titlebar button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:backdrop:hover,
+.titlebar button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:backdrop:hover,
+.titlebar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:backdrop:hover,
+.csd .titlebar button.titlebutton.close:hover,
+.csd .titlebar button.titlebutton.close:backdrop:hover,
+.csd .titlebar button.titlebutton.maximize:hover,
+.csd .titlebar button.titlebutton.maximize:backdrop:hover,
+.csd .titlebar button.titlebutton.minimize:hover,
+.csd .titlebar button.titlebutton.minimize:backdrop:hover,
+.titlebar.default-decoration button.titlebutton.close:hover,
+.titlebar.default-decoration button.titlebutton.close:backdrop:hover,
+.titlebar.default-decoration button.titlebutton.maximize:hover,
+.titlebar.default-decoration button.titlebutton.maximize:backdrop:hover,
+.titlebar.default-decoration button.titlebutton.minimize:hover,
+.titlebar.default-decoration button.titlebutton.minimize:backdrop:hover,
+.csd .titlebar.default-decoration button.titlebutton.close:hover,
+.csd .titlebar.default-decoration button.titlebutton.close:backdrop:hover,
+.csd .titlebar.default-decoration button.titlebutton.maximize:hover,
+.csd .titlebar.default-decoration button.titlebutton.maximize:backdrop:hover,
+.csd .titlebar.default-decoration button.titlebutton.minimize:hover,
+.csd .titlebar.default-decoration button.titlebutton.minimize:backdrop:hover {
+  color: transparent; }
+
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:active,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.maximize:active,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.minimize:active,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:checked,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.maximize:checked,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.minimize:checked,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.close:backdrop:active,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.maximize:backdrop:active,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.minimize:backdrop:active,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.close:backdrop:checked,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.maximize:backdrop:checked,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.minimize:backdrop:checked,
+headerbar button.titlebutton.close:active,
+headerbar button.titlebutton.close:checked,
+headerbar button.titlebutton.close:backdrop:active,
+headerbar button.titlebutton.close:backdrop:checked,
+headerbar button.titlebutton.maximize:active,
+headerbar button.titlebutton.maximize:checked,
+headerbar button.titlebutton.maximize:backdrop:active,
+headerbar button.titlebutton.maximize:backdrop:checked,
+headerbar button.titlebutton.minimize:active,
+headerbar button.titlebutton.minimize:checked,
+headerbar button.titlebutton.minimize:backdrop:active,
+headerbar button.titlebutton.minimize:backdrop:checked,
+.csd headerbar button.titlebutton.close:active,
+.csd headerbar button.titlebutton.close:checked,
+.csd headerbar button.titlebutton.close:backdrop:active,
+.csd headerbar button.titlebutton.close:backdrop:checked,
+.csd headerbar button.titlebutton.maximize:active,
+.csd headerbar button.titlebutton.maximize:checked,
+.csd headerbar button.titlebutton.maximize:backdrop:active,
+.csd headerbar button.titlebutton.maximize:backdrop:checked,
+.csd headerbar button.titlebutton.minimize:active,
+.csd headerbar button.titlebutton.minimize:checked,
+.csd headerbar button.titlebutton.minimize:backdrop:active,
+.csd headerbar button.titlebutton.minimize:backdrop:checked,
+headerbar.default-decoration button.titlebutton.close:active,
+headerbar.default-decoration button.titlebutton.close:checked,
+headerbar.default-decoration button.titlebutton.close:backdrop:active,
+headerbar.default-decoration button.titlebutton.close:backdrop:checked,
+headerbar.default-decoration button.titlebutton.maximize:active,
+headerbar.default-decoration button.titlebutton.maximize:checked,
+headerbar.default-decoration button.titlebutton.maximize:backdrop:active,
+headerbar.default-decoration button.titlebutton.maximize:backdrop:checked,
+headerbar.default-decoration button.titlebutton.minimize:active,
+headerbar.default-decoration button.titlebutton.minimize:checked,
+headerbar.default-decoration button.titlebutton.minimize:backdrop:active,
+headerbar.default-decoration button.titlebutton.minimize:backdrop:checked,
+.csd headerbar.default-decoration button.titlebutton.close:active,
+.csd headerbar.default-decoration button.titlebutton.close:checked,
+.csd headerbar.default-decoration button.titlebutton.close:backdrop:active,
+.csd headerbar.default-decoration button.titlebutton.close:backdrop:checked,
+.csd headerbar.default-decoration button.titlebutton.maximize:active,
+.csd headerbar.default-decoration button.titlebutton.maximize:checked,
+.csd headerbar.default-decoration button.titlebutton.maximize:backdrop:active,
+.csd headerbar.default-decoration button.titlebutton.maximize:backdrop:checked,
+.csd headerbar.default-decoration button.titlebutton.minimize:active,
+.csd headerbar.default-decoration button.titlebutton.minimize:checked,
+.csd headerbar.default-decoration button.titlebutton.minimize:backdrop:active,
+.csd headerbar.default-decoration button.titlebutton.minimize:backdrop:checked,
+.titlebar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:checked,
+.titlebar button.titlebutton.close:backdrop:active,
+.titlebar button.titlebutton.close:backdrop:checked,
+.titlebar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.maximize:checked,
+.titlebar button.titlebutton.maximize:backdrop:active,
+.titlebar button.titlebutton.maximize:backdrop:checked,
+.titlebar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.minimize:checked,
+.titlebar button.titlebutton.minimize:backdrop:active,
+.titlebar button.titlebutton.minimize:backdrop:checked,
+.csd .titlebar button.titlebutton.close:active,
+.csd .titlebar button.titlebutton.close:checked,
+.csd .titlebar button.titlebutton.close:backdrop:active,
+.csd .titlebar button.titlebutton.close:backdrop:checked,
+.csd .titlebar button.titlebutton.maximize:active,
+.csd .titlebar button.titlebutton.maximize:checked,
+.csd .titlebar button.titlebutton.maximize:backdrop:active,
+.csd .titlebar button.titlebutton.maximize:backdrop:checked,
+.csd .titlebar button.titlebutton.minimize:active,
+.csd .titlebar button.titlebutton.minimize:checked,
+.csd .titlebar button.titlebutton.minimize:backdrop:active,
+.csd .titlebar button.titlebutton.minimize:backdrop:checked,
+.titlebar.default-decoration button.titlebutton.close:active,
+.titlebar.default-decoration button.titlebutton.close:checked,
+.titlebar.default-decoration button.titlebutton.close:backdrop:active,
+.titlebar.default-decoration button.titlebutton.close:backdrop:checked,
+.titlebar.default-decoration button.titlebutton.maximize:active,
+.titlebar.default-decoration button.titlebutton.maximize:checked,
+.titlebar.default-decoration button.titlebutton.maximize:backdrop:active,
+.titlebar.default-decoration button.titlebutton.maximize:backdrop:checked,
+.titlebar.default-decoration button.titlebutton.minimize:active,
+.titlebar.default-decoration button.titlebutton.minimize:checked,
+.titlebar.default-decoration button.titlebutton.minimize:backdrop:active,
+.titlebar.default-decoration button.titlebutton.minimize:backdrop:checked,
+.csd .titlebar.default-decoration button.titlebutton.close:active,
+.csd .titlebar.default-decoration button.titlebutton.close:checked,
+.csd .titlebar.default-decoration button.titlebutton.close:backdrop:active,
+.csd .titlebar.default-decoration button.titlebutton.close:backdrop:checked,
+.csd .titlebar.default-decoration button.titlebutton.maximize:active,
+.csd .titlebar.default-decoration button.titlebutton.maximize:checked,
+.csd .titlebar.default-decoration button.titlebutton.maximize:backdrop:active,
+.csd .titlebar.default-decoration button.titlebutton.maximize:backdrop:checked,
+.csd .titlebar.default-decoration button.titlebutton.minimize:active,
+.csd .titlebar.default-decoration button.titlebutton.minimize:checked,
+.csd .titlebar.default-decoration button.titlebutton.minimize:backdrop:active,
+.csd .titlebar.default-decoration button.titlebutton.minimize:backdrop:checked {
+  color: transparent; }
+
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:backdrop,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.maximize:backdrop,
+.solid-csd
+headerbar:not(.default-decoration)
+button.titlebutton.minimize:backdrop,
+headerbar button.titlebutton.close:backdrop,
+headerbar button.titlebutton.maximize:backdrop,
+headerbar button.titlebutton.minimize:backdrop,
+.csd headerbar button.titlebutton.close:backdrop,
+.csd headerbar button.titlebutton.maximize:backdrop,
+.csd headerbar button.titlebutton.minimize:backdrop,
+headerbar.default-decoration button.titlebutton.close:backdrop,
+headerbar.default-decoration button.titlebutton.maximize:backdrop,
+headerbar.default-decoration button.titlebutton.minimize:backdrop,
+.csd headerbar.default-decoration button.titlebutton.close:backdrop,
+.csd headerbar.default-decoration button.titlebutton.maximize:backdrop,
+.csd headerbar.default-decoration button.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.close:backdrop,
+.titlebar button.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop,
+.csd .titlebar button.titlebutton.close:backdrop,
+.csd .titlebar button.titlebutton.maximize:backdrop,
+.csd .titlebar button.titlebutton.minimize:backdrop,
+.titlebar.default-decoration button.titlebutton.close:backdrop,
+.titlebar.default-decoration button.titlebutton.maximize:backdrop,
+.titlebar.default-decoration button.titlebutton.minimize:backdrop,
+.csd .titlebar.default-decoration button.titlebutton.close:backdrop,
+.csd .titlebar.default-decoration button.titlebutton.maximize:backdrop,
+.csd .titlebar.default-decoration button.titlebutton.minimize:backdrop {
+  color: transparent;
+  background-color: rgba(0, 0, 0, 0.12); }
+
+button.titlebutton image {
+  margin: -1px; }
+
+/* gtk4 */
+/*********************
+ * GtkWindowControls *
+ *********************/
+windowcontrols > button {
+  min-height: 12px;
+  min-width: 12px;
+  padding: 0px;
+  margin-left: 2px;
+  margin-right: 2px; }
+
+windowcontrols > button.minimize,
+windowcontrols > button.maximize,
+windowcontrols > button.close {
+  color: transparent;
+  background: none; }
+
+windowcontrols.end > button.minimize > image {
+  background-color: #38c76a;
+  box-shadow: none; }
+
+windowcontrols.start > button.minimize > image {
+  background-color: #fdbe04;
+  box-shadow: none; }
+
+windowcontrols.end > button.minimize > image {
+  margin-left: 12px; }
+
+windowcontrols.end > button.minimize > image:hover {
+  background-color: rgba(56, 199, 106, 0.85); }
+
+windowcontrols.start > button.minimize > image:hover {
+  background-color: rgba(253, 190, 4, 0.85); }
+
+windowcontrols.end > button.maximize > image {
+  background-color: #fdbe04;
+  box-shadow: none; }
+
+windowcontrols.start > button.maximize > image {
+  background-color: #38c76a;
+  box-shadow: none; }
+
+windowcontrols.end > button.maximize > image:hover {
+  background-color: rgba(253, 190, 4, 0.85); }
+
+windowcontrols.start > button.maximize > image:hover {
+  background-color: rgba(56, 199, 106, 0.85); }
+
+windowcontrols > button.close > image {
+  background-color: #fd5f51;
+  box-shadow: none; }
+
+windowcontrols > button.close > image:hover {
+  background-color: rgba(253, 95, 81, 0.85); }
+
+windowcontrols > button > image {
+  padding: 0.4px; }
+
+windowcontrols {
+  margin-right: -6px; }
+
+/*********************
+ * General *
+ *********************/
+viewswitcher.wide {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px; }
+
+viewswitcher.wide > button {
+  margin: 2px; }
+
+switch:checked {
+  background-color: #30d158; }
+
+switch > slider,
+scale.horizontal > trough > slider {
+  background-color: white;
+  min-width: 26px; }
+
+scale.marks-after > trough > slider {
+  background-color: white;
+  transform: rotate(0deg); }
+
+switch > slider,
+scale.horizontal > trough > slider,
+scale.marks-after > trough > slider {
+  transition: transform 200ms cubic-bezier(0.15, 0.5, 0.3, 0.95), background-color 150ms ease-in-out; }
+
+switch > slider:active {
+  transform: scale(1.8);
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none; }
+
+scale.horizontal > trough > slider:active,
+scale.marks-after > trough > slider:active {
+  transform: scale(1.28);
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none; }
+
+window > tooltip.background {
+  box-shadow: none; }
+
+popover > contents {
+  background-color: rgba(0, 0, 0, 0.92);
+  background-image: none;
+  box-shadow: none;
+  border-radius: 16px; }
+
+popover > arrow {
+  background-color: rgba(0, 0, 0, 0.92);
+  background-image: none; }
+
+.raised.top-bar,
+window > windowhandle,
+window > headerbar.titlebar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none; }
+
+widget.content-pane {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 30px; }
+
+box.vertical,
+stack.view,
+calendar-view,
+navigation-view-page > toolbarview.undershoot-top.view {
+  background-color: rgba(0, 0, 0, 0); }
+
+stack.drop-widget,
+stack.drop-widget > revealer,
+widget.background,
+widget.content-pane > lpdragoverlay > revealer,
+widget.content-pane > lpdragoverlay {
+  border-radius: 30px; }
+
+/*********************
+ * calendar *
+ *********************/
+monthcell:hover {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+/*********************
+ * Cartridges *
+ *********************/
+overlay.large > button#cover_button {
+  border-radius: 20px;
+  min-width: 22px; }
+
+overlay.large
+> revealer.right.top
+> menubutton.circular.osd.popup
+button.image-button.toggle {
+  margin-right: 1px; }
+
+/*********************
+ * Disk Usage Analyzer *
+ *********************/
+overlay-split-view box columnview.view,
+overlay-split-view scrolledwindow columnview.view {
+  background-color: rgba(0, 0, 0, 0);
+  padding-top: 2px;
+  padding-left: 6px;
+  padding-right: 6px; }
+
+/*********************
+ * Dissent *
+ *********************/
+notebook.login-methods > header.horizontal.top {
+  border: none;
+  padding-bottom: 12px; }
+
+notebook.login-methods > stack {
+  background-color: transparent;
+  padding-bottom: 12px; }
+
+headerbar.login-page-header,
+headerbar.login-page-header > windowhandle {
+  background-color: transparent;
+  border: 0px solid rgba(0, 0, 0, 0); }
+
+picture.onlineimage.thumbnail-embed-image,
+button.flat.thumbnail-embed {
+  border-radius: 20px; }
+
+window headerbar {
+  background-color: transparent; }
+
+overlay-split-vew.window-chatpage
+> widget.sidebar-pane
+> box.horizontal.sidebar-sidebar
+> box.sidebar-guildside.vertical
+> windowcontrols.start {
+  margin-top: 10px; }
+
+box.horizontal.user-bar {
+  margin-right: 17px; }
+
+popover.emoji-picker > box.emoji-searchbar > entry.search {
+  min-height: 100px; }
+
+list.message-list > row,
+textview.md-textblock {
+  border-radius: 0; }
+
+overlay-split-vew.window-chatpage
+> windowhandle
+> box.end.horizontal
+> button.image-button.toggle {
+  margin-right: -4px; }
+
+/*********************
+ * Extensions *
+ *********************/
+header.horizontal.top > tabs > tab:checked,
+header.horizontal.top > tabs > tab:hover {
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.15); }
+
+header.horizontal.top > tabs > tab {
+  margin-left: -4px;
+  margin-right: 8px; }
+
+notebook.frame > stack {
+  background-color: transparent; }
+
+notebook.frame > stack > list {
+  background-color: rgba(255, 255, 255, 0.6); }
+
+/*********************
+ * Mission Center *
+ *********************/
+columnview.rich-list.view {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none; }
+
+widget > overlay-split-view > widget.background {
+  background-color: rgba(35, 35, 35, 0.745);
+  background-image: none;
+  box-shadow: none; }
+
+widget > overlay-split-view > dimming, widget > overlay-split-view > shadow.left {
+  opacity: 0; }
+
+/*********************
+ * Nautilus *
+ *********************/
+widget#NautilusViewCell {
+  border-radius: 0px; }
+
+widget#NautilusViewCell
+> box.horizontal
+> box.horizontal
+> box.vertical
+> picture {
+  border-radius: 0px; }
+
+widget#NautilusViewCell > box.horizontal > box.horizontal > box.vertical {
+  border-radius: 0px; }
+
+window.filechooser > gridview.view,
+window.filechooser > list.navigation-sidebar {
+  background-color: transparent; }
+
+gridview.view picture.thumbnail {
+  border-radius: 16px;
+  border: none;
+  border-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+  background-color: transparent; }
+
+.nautilus-window headerbar > revealer.top-bar,
+overlay-split-view.view,
+statuspage.view,
+window#NautilusAppChooser > headerbar.titlebar,
+box.vertical > banner > revealer > widget {
+  background-color: rgba(0, 0, 0, 0); }
+
+.sidebar-pane {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none; }
+
+toastoverlay > overlay-split-view > widget.background {
+  background-color: rgba(35, 35, 35, 0.745);
+  background-image: none;
+  box-shadow: none; }
+
+toastoverlay > overlay-split-view > dimming.left, toastoverlay > overlay-split-view > shadow.left {
+  opacity: 0; }
+
+box.horizontal.start > button.image-button.toggle {
+  margin-right: 0px; }
+
+window {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none; }
+
+#NautilusFileChooser.background {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none; }
+
+window#NautilusFileChooser > button.default.pill {
+  margin-right: 10px; }
+
+window#NautilusFileChooser > revealer.bottom-bar {
+  margin-left: 10px; }
+
+#NautilusPathBar, .nautilus-pathbar {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none; }
+
+entry {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none; }
+
+window#NautilusAppChooser > separator.horizontal {
+  opacity: 0; }
+
+window#NautilusAppChooser
+> box.dialog-vbox
+> box.vertical
+> scrolledwindow.background {
+  background-color: rgba(0, 0, 0, 0); }
+
+window#NautilusAppChooser > scrolledwindow.background {
+  border: none; }
+
+dialog.floating.nautilus-app-chooser listview.view {
+  padding: 4px; }
+
+dialog.floating.nautilus-app-chooser toolbarview.undershoot-bottom.undershoot-top widget.toolbar {
+  padding-top: 6px;
+  padding-bottom: 0px; }
+
+dialog.floating.nautilus-app-chooser listview.view > header {
+  padding-top: 10px; }
+
+dialog.floating.nautilus-app-chooser toolbarview.undershoot-bottom.undershoot-top,
+dialog.floating.nautilus-app-chooser toolbarview.undershoot-top {
+  padding: 10px; }
+
+list.background {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none;
+  margin-top: 10px; }
+
+/* This removes selection color of sidebar
+row.activatable {
+  background-color: rgba(0, 0, 0, 0);
+ }
+ */
+sheet.background {
+  background-color: transparent;
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.92); }
+
+button.suggested-action.text-button {
+  margin-right: -10px; }
+
+box.bottom.floating-bar {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none; }
+
+toastoverlay toast {
+  background-color: rgba(0, 0, 0, 0.93);
+  background-image: none;
+  box-shadow: none; }
+
+/*
+ row.activatable.entry {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none;
+ }
+
+ toolbarview.undershoot-top {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none;
+ }
+*/
+/*********************
+ * Photos APP *
+ *********************/
+row.expander,
+row.expander > row.activatable.header {
+  border-radius: 0;
+  border-bottom-color: rgba(255, 255, 255, 0.2); }
+
+/*********************
+ * Settings *
+ *********************/
+button.background-preview-button.toggle:checked {
+  border-radius: 30px; }
+
+button.background-preview-button.toggle > background-preview > picture {
+  border-radius: 28px; }
+
+/*********
+ * Shelly *
+ *********/
+notebook.frame, frame {
+  border: none; }
+
+frame.rounded-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  margin-bottom: 10px;
+  border-radius: 30px; }
+
+frame.background.dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.92);
+  background-image: none;
+  box-shadow: none; }
+
+notebook.frame scrolledwindow columnview.view {
+  border-radius: 30px;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: none; }
+
+stack frame > box.vertical {
+  border-radius: 30px;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  padding: 12px;
+  padding-top: 16px; }
+
+stack frame box.vertical scrolledwindow > viewport > list, list.flatpak-nav {
+  background-color: transparent;
+  padding: 14px;
+  border-radius: 30px; }
+
+frame > stack {
+  border-radius: 30px;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: none; }
+
+header.horizontal.top {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: none;
+  margin: 6px;
+  border: none; }
+
+#remove_page_box.vertical scrolledwindow listview,
+#update_page_box.vertical scrolledwindow listview {
+  background-color: transparent; }
+
+notebook.frame separator.horizontal,
+stack > box > separator.horizontal {
+  opacity: 0; }
+
+header.horizontal.top tab {
+  margin: 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0 2em;
+  min-width: 275px; }
+
+box.sidebar-nav.vertical {
+  padding-top: 5px;
+  padding-right: 10px; }
+
+columnview.view > header.activatable {
+  padding-top: 2px; }
+
+box.horizontal.linked > button.image-button.toggle {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+button.suggested-action.text-button {
+  margin-left: 10px;
+  margin-right: 0px; }
+
+button.destructive-action.text-button {
+  margin-left: 10px; }
+
+frame box.vertical list row {
+  padding: 10px; }
+
+scrolledwindow > gridview {
+  background-color: transparent;
+  margin-left: 20px; }
+
+stack > box > scrolledwindow > listview.view {
+  background-color: transparent; }
+
+frame box.vertical list.flatpak-nav row:selected {
+  border-left: none; }
+
+/*********************
+ * Text Editor *
+ *********************/
+tabbox {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  margin: 2px 4px 2px 0px;
+  box-shadow: none; }
+
+textview.editor {
+  border-radius: 30px;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: none; }
+
+textview.editor > border.left > gutter,
+textview.editor > border.left,
+revealer.bottom-bar.raised,
+positionlabel.bottom.numeric.right {
+  background-color: rgba(0, 0, 0, 0); }
+
+revealer.bottom-bar.raised,
+revealer.top-bar.raised {
+  border: none;
+  box-shadow: none; }
+
+separator.vertical {
+  opacity: 0; }
+
+list.boxed-list row,
+list.content row {
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+list.boxed-list row:first-child,
+list.content row:first-child {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px; }
+
+list.boxed-list row:last-child,
+list.content row:last-child {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-bottom: none; }
+
+list.boxed-list row:only-child,
+list.content row:only-child {
+  border-radius: 16px;
+  border-bottom: none; }
+
+widget.end.sidebar-pane,
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  border-radius: 30px; }
+
+widget.end.sidebar-pane > widget,
+widget.end.sidebar-pane > widget > preferencespage {
+  margin-top: -14px;
+  margin-bottom: -14px; }
+
+widget.sidebar-pane preferencespage > scrolledwindow > viewport,
+overlay-split-view widget > scrolledwindow > viewport {
+  border-radius: 30px; }
+
+widget.sidebar-pane preferencespage > scrolledwindow,
+overlay-split-view widget > scrolledwindow {
+  margin-top: 14px;
+  margin-bottom: 14px; }
+
+floating-sheet sheet.background preferencespage > scrolledwindow {
+  margin: 25px;
+  margin-bottom: 35px; }
+
+widget.end.sidebar-pane {
+  margin-top: 10px;
+  margin-left: 10px; }
+
+/*
+.collapse-spacing.vertical {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none;
+}
+
+*/
+/*********************
+ * Tweaks *
+ *********************/
+.tweak-titlebar-left,
+.tweak-titlebar-right {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-right-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  box-shadow: none; }
+
+.tweak-titlebar-left > box,
+.tweak-titlebar-right > box {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-right-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  box-shadow: none; }
+
+box {
+  border: none;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-right-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  box-shadow: none; }
+
+stack.background {
+  background-color: rgba(0, 0, 0, 0); }
+
+box.split-row.vertical {
+  border-radius: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2); }
+
+leaflet.unfolded > separator.horizontal {
+  opacity: 0; }
+
+leaflet.unfolded > box.vertical list.navigation-sidebar {
+  background-color: rgba(255, 255, 255, 0.065);
+  background-image: none;
+  box-shadow: none; }
+
+leaflet.unfolded > box.vertical > searchbar box {
+  background-color: transparent; }
+
+/*********************
+ * weather *
+ *********************/
+scrolledwindow.card.forecast-card {
+  margin-left: 12px;
+  margin-right: 12px; }
+
+/* >>> aura-glass BEGIN <<< */
+/* aura-glass:gtk4 — appended to ~/.config/gtk-4.0/gtk.css and gtk-dark.css
+ *
+ * The theme styled `entry` with only a faint gradient and no metrics, so
+ * fields inherited libadwaita's compact height and read as part of the
+ * surface behind them. These give a text field its own material and its own
+ * height, so it's obvious where you can type.
+ *
+ * Matches the shell ladder in shell-tweaks.css:
+ *   field fill ....... rgba(255, 255, 255, 0.07)
+ *   field hover ...... rgba(255, 255, 255, 0.10)
+ *
+ * A field is told apart by its fill, not by an edge — same rule as the shell
+ * surfaces, and for the same reason. `border` stays at `1px solid transparent`
+ * so the metrics hold, and the only edge any field ever draws is the accent
+ * focus ring, which is the one edge that carries information.
+ */
+
+/* ---------- Flat, everywhere ----------
+ * This desktop is 2D. The blur behind a surface is the only depth it gets;
+ * nothing is lifted off anything else.
+ *
+ * aura-glass-apply has already rewritten the theme's own shadow and gradient
+ * values to `none` before this sheet is read, so this is a safety net rather
+ * than the mechanism — it catches anything written in a form that pass does not
+ * match, and any shadow arriving from an app's own CSS rather than the theme.
+ * Unlike St, GTK4 has a universal selector, so one rule covers it.
+ *
+ * The accent focus ring is re-asserted where it belongs and survives this on
+ * specificity alone: `entry:focus-within` is 0-1-1 against this rule's 0-0-0,
+ * and it is written later besides. It is a 0-offset, 0-blur ring, not a shadow:
+ * it says where the keyboard is, which is information rather than decoration.
+ *
+ * None of these carry !important, and none of them may. GTK4's parser has no
+ * such keyword — it reports `Junk at end of value` and drops the whole
+ * declaration, not merely the flag, so every rule here that once carried one
+ * did nothing at all. This rule never ran, and neither did the four focus rings
+ * that were relying on it not to. It is not needed either way: this file is
+ * loaded from ~/.config/gtk-4.0/gtk.css, which GTK reads at USER priority,
+ * above anything libadwaita or an application provides. Within the file the
+ * ordinary cascade decides, which is what the numeric prefixes are for.
+ *
+ * St is the exception and honours !important, so the shell sheets keep theirs.
+ */
+* {
+  box-shadow: none;
+}
+
+/* libadwaita draws the sidebar and popover inward shadows and hairlines from
+ * named colours rather than from any rule, so they cannot be turned off by
+ * overriding a selector — the names have to be redefined. Appended after the
+ * theme's own definitions, so these win. They go fully transparent: surfaces
+ * are told apart by their fill and blur, eliminating black shading artifacts.
+ *
+ * shade_color is the widest of these and the one with a real cost: libadwaita
+ * uses it for scroll undershoot as well as for drop shadows, so the fade that
+ * says a list continues past its edge goes with it. Taken knowingly — the
+ * artifact it removes is visible on every surface, the undershoot on some — but
+ * it is the one define here that trades away information rather than
+ * decoration.
+ */
+@define-color sidebar_shade_color transparent;
+@define-color secondary_sidebar_shade_color transparent;
+@define-color sidebar_border_color transparent;
+@define-color secondary_sidebar_border_color transparent;
+@define-color popover_shade_color transparent;
+@define-color shade_color transparent;
+
+entry,
+entry.flat,
+spinbutton:not(.vertical) {
+  min-height: 34px;
+  padding: 4px 12px;
+  border-radius: 10px;
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid transparent;
+  box-shadow: none;
+  caret-color: @accent_bg_color;
+}
+
+entry:hover,
+spinbutton:not(.vertical):hover {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-color: transparent;
+}
+
+/* focus-within rather than :focus — the focus lands on the inner text node. */
+entry:focus-within,
+spinbutton:not(.vertical):focus-within {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-color: alpha(@accent_bg_color, 0.9);
+  box-shadow: 0 0 0 2px alpha(@accent_bg_color, 0.30);
+}
+
+entry:disabled,
+spinbutton:not(.vertical):disabled {
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+entry > text > placeholder {
+  opacity: 0.5;
+}
+
+/* Search fields keep the capsule shape they have on macOS. */
+entry.search {
+  border-radius: 9999px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* So do the fields that sit in a header bar — Nautilus' path bar above all.
+ * The theme paints those as a capsule, so leaving them at the 10px above drew
+ * the focus ring on a tighter radius than the fill and its corners cut across
+ * the rounded ends. The ring follows border-radius, so the two have to agree.
+ */
+headerbar entry,
+headerbar entry.flat,
+headerbar entry.location-entry,
+entry.location-entry,
+.location-entry,
+.nautilus-path-bar,
+entry.nautilus-path-bar {
+  min-height: 30px;
+  border-radius: 9999px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* The button that closes path-bar edit mode sits immediately after the entry.
+ * The theme leaves it at the default rounded-rect, so next to a capsule field
+ * it read as a lozenge rather than a matching control. Equal min-width and
+ * min-height are what actually make a circle — border-radius alone only
+ * rounds whatever rectangle the button already is.
+ *
+ * Matched to the entry's 30px so the two line up, with the gap on the button
+ * rather than the entry, so the field's own width is not affected.
+ *
+ * Nautilus 46+ renders the path bar as a linked box .linked, GTK4 itself has
+ * a plain location entry .location-entry, and styling the entry as a capsule
+ * without matching its button is what produces the lozenge in the first place.
+ */
+headerbar entry.location-entry + button,
+entry.location-entry + button,
+.location-entry + button,
+entry.nautilus-path-bar + button,
+.nautilus-path-bar + button,
+headerbar .linked > entry.location-entry + button,
+headerbar .linked > entry.nautilus-path-bar + button,
+box.linked > entry.location-entry + button,
+box.linked > entry.nautilus-path-bar + button {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 9999px;
+  padding: 0;
+  margin-left: 5px;
+}
+
+/* The icon inside it carries its own padding, which re-inflates the circle. */
+headerbar entry.location-entry + button > image,
+entry.location-entry + button > image,
+.location-entry + button > image,
+entry.nautilus-path-bar + button > image,
+.nautilus-path-bar + button > image,
+headerbar .linked > entry.location-entry + button > image,
+headerbar .linked > entry.nautilus-path-bar + button > image,
+box.linked > entry.location-entry + button > image,
+box.linked > entry.nautilus-path-bar + button > image {
+  padding: 0;
+  margin: 0;
+}
+
+/* Error / warning states keep the same shape, only the edge changes colour. */
+entry.error {
+  border-color: alpha(@error_color, 0.9);
+}
+
+entry.error:focus-within {
+  box-shadow: 0 0 0 2px alpha(@error_color, 0.30);
+}
+
+entry.warning {
+  border-color: alpha(@warning_color, 0.9);
+}
+
+entry.warning:focus-within {
+  box-shadow: 0 0 0 2px alpha(@warning_color, 0.30);
+}
+
+/* ---------- Buttons ----------
+ * The theme set only `button { border-radius: 9999px }`, so buttons in action
+ * bars fell back to libadwaita's flat treatment and read as plain text labels.
+ * Anything carrying a label now gets a real surface. Icon-only buttons and
+ * window controls are deliberately left alone so toolbars stay quiet.
+ */
+button.text-button,
+button.flat.text-button,
+button.pill {
+  min-height: 32px;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.10);
+  border: 1px solid transparent;
+  box-shadow: none;
+  color: @window_fg_color;
+}
+
+button.text-button:hover,
+button.flat.text-button:hover,
+button.pill:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: transparent;
+}
+
+button.text-button:active,
+button.flat.text-button:active,
+button.pill:active,
+button.text-button:checked,
+button.flat.text-button:checked {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+button.text-button:disabled,
+button.flat.text-button:disabled,
+button.pill:disabled {
+  opacity: 0.5;
+}
+
+/* The primary action stays filled with the accent so it reads as primary. */
+button.suggested-action,
+button.suggested-action.text-button,
+button.suggested-action.flat.text-button,
+button.suggested-action.pill {
+  background-color: @accent_bg_color;
+  background-image: none;
+  color: @accent_fg_color;
+  border-color: transparent;
+}
+
+button.suggested-action:hover,
+button.suggested-action.text-button:hover {
+  background-color: shade(@accent_bg_color, 1.12);
+}
+
+button.destructive-action,
+button.destructive-action.text-button,
+button.destructive-action.flat.text-button {
+  background-color: @destructive_bg_color;
+  background-image: none;
+  color: @destructive_fg_color;
+  border-color: transparent;
+}
+
+/* Window controls must not pick up the fill above. */
+button.titlebutton,
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+  background-color: transparent;
+  border: none;
+}
+
+/* Screencast / screen-sharing display picker in xdg-desktop-portal-gnome.
+ * Its monitor tiles are buttons, so the theme's blanket
+ * `button { border-radius: 9999px }` rounded a wide rectangle into a capsule.
+ * These put the tile geometry back, nested: the tile, the container inside it,
+ * then the label, each a step tighter so the corners stay concentric.
+ */
+button.monitor,
+.monitor {
+  border-radius: 12px;
+}
+
+.monitor-selection-container {
+  border-radius: 9px;
+}
+
+button.monitor > .text,
+.monitor > .text {
+  border-radius: 7px;
+}
+
+/* ---------- Neighbouring buttons ----------
+ * The theme pulls three kinds of button leftwards with a negative right
+ * margin, and that is what closed the gap between adjacent buttons: in a
+ * header bar the view toggle and the menu button sat welded together, six
+ * pixels of box spacing against twelve of negative margin, so they overlapped
+ * rather than merely touched.
+ *
+ * The margins are the theme's layout hack for one arrangement and were never
+ * scoped to it. It zeroes them again itself inside `box.horizontal.start` and
+ * `box.horizontal.linked` — only `box.end`, the right-hand side of every
+ * header bar, was left pulled in. Zeroing them everywhere finishes what those
+ * two rules started.
+ *
+ * No gap is set here on purpose. GtkHeaderBar spaces its own children and so
+ * does every action area; an earlier pass added `button + button {
+ * margin-left: 8px }`, which stacked on top of that spacing where it already
+ * worked and pushed apart the segments of linked groups, which are meant to
+ * touch. Taking the negative margin off hands the container's own spacing
+ * back, which is the gap that was there before.
+ *
+ * Selectors mirror the theme's exactly, so appending is enough to win: equal
+ * specificity, later in the file. Only margin-right is touched, because that
+ * is the only side the theme sets.
+ */
+button.image-button.toggle,
+button.suggested-action.text-button,
+menubutton > button.image-button.toggle {
+  margin-right: 0;
+}
+
+/* ---------- Dropdowns / combo rows ----------
+ * Not styled by the theme at all, so a select rendered as bare text with no
+ * affordance. Given the same recessed material as a text field, since that is
+ * what it is — a value you pick rather than an action you fire.
+ * Declared after the button block so the squarer radius wins.
+ */
+dropdown > button,
+combobox > box > button {
+  min-height: 34px;
+  padding: 4px 10px 4px 12px;
+  border-radius: 10px;
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+dropdown > button:hover,
+combobox > box > button:hover {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-color: transparent;
+}
+
+dropdown > button:focus-within,
+combobox > box > button:focus-within {
+  border-color: alpha(@accent_bg_color, 0.9);
+  box-shadow: 0 0 0 2px alpha(@accent_bg_color, 0.30);
+}
+
+/* Keep the chevron visible — it is the only cue that a row opens a list. */
+dropdown > button > arrow,
+row.combo > box > image.dropdown-arrow,
+row.expander > box > image.expander-row-arrow {
+  opacity: 0.85;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+row.combo:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Grouping containers ----------
+ * Boxed lists / cards were transparent with a barely-there gradient, so the
+ * box holding a set of rows was invisible and its rows floated loose on the
+ * window. One step up the ladder is what now gives the group its shape.
+ * Row separators were rgba(0, 0, 0, 0.12) — a dark line on a dark surface.
+ */
+list.boxed-list,
+list.content,
+list.background,
+.card,
+scrolledwindow.card,
+preferencesgroup > box > list {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+list.boxed-list row,
+list.content row {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+list.boxed-list row:last-child,
+list.content row:last-child,
+list.boxed-list row:only-child,
+list.content row:only-child {
+  border-bottom: none;
+}
+
+list.boxed-list row:hover,
+list.content row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ---------- Split-view container spacing ----------
+ * A gap between the sidebar pane and the content pane, so the two read as two
+ * surfaces rather than one surface with a line drawn on it.
+ *
+ * paned is scoped to .horizontal on purpose: a left margin on the second child
+ * of a vertical paned puts the gap on the wrong axis, and paned carries an
+ * orientation class precisely so this can be asked.
+ */
+navigation-split-view > .content-pane,
+overlay-split-view > .content-pane,
+paned.horizontal > :last-child {
+  margin-left: 5px;
+}
+
+/* Header bars and window handles square off and stay flat.
+ *
+ * This is deliberately not scoped to toolbarview: the theme rounds header bars
+ * everywhere, and a rounded header bar inside a square-cornered pane reads as a
+ * pill floating in the pane rather than as its top edge. Squaring every one of
+ * them is safe because the window, not the header bar, is what draws and clips
+ * the rounded window corners.
+ */
+toolbarview windowhandle,
+toolbarview > revealer.top-bar,
+toolbarview > revealer.top-bar > windowhandle,
+toolbarview > revealer.top-bar > windowhandle > box.vertical,
+toolbarview > revealer.top-bar headerbar,
+headerbar,
+headerbar windowhandle,
+headerbar.titlebar,
+headerbar.titlebar windowhandle,
+.titlebar,
+.titlebar windowhandle {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* The sidebar pane already carries the tint; the list inside it painting its
+ * own ground on top is what doubles it. Set here rather than in
+ * gtk4-transparency.css because it is true whether or not that optional sheet
+ * is installed.
+ */
+.sidebar-pane list.navigation-sidebar,
+.sidebar-pane .navigation-sidebar,
+.sidebar-pane placessidebar,
+.sidebar-pane stacksidebar,
+.sidebar-pane placesview,
+.sidebar-pane placesview list,
+.sidebar-pane listview,
+.sidebar-pane list,
+.sidebar-pane scrolledwindow,
+.sidebar-pane viewport,
+#left_box,
+#left_box scrolledwindow,
+#left_box viewport,
+#left_box searchbar,
+#left_box searchbar > revealer > box {
+  background-color: transparent;
+  background-image: none;
+}
+
+leaflet > separator.vertical,
+leaflet > separator.horizontal,
+leaflet.unfolded > separator.vertical,
+leaflet.unfolded > separator.horizontal {
+  opacity: 0;
+  background-color: transparent;
+}
+
+.tweak-startup,
+.tweak-startup:hover,
+.tweak-group-startup {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* ---------- Column views and list views ----------
+ * Cells sat flush against the container's rounded corner and against each
+ * other, so text in the first and last column was clipped and a checkbox in
+ * column one touched the label in column two.
+ *
+ * treeview takes the .view node: bare `treeview` is the GTK3 spelling and
+ * matches nothing here.
+ */
+columnview,
+listview,
+treeview.view {
+  padding: 4px;
+}
+
+columnview cell {
+  padding: 8px 10px;
+}
+
+columnview cell:first-child,
+columnview > header > button:first-child {
+  padding-left: 14px;
+}
+
+columnview cell:last-child,
+columnview > header > button:last-child {
+  padding-right: 14px;
+}
+
+/* ---------- Toasts ----------
+ * A toast lands in the bottom corner, where the window's own rounded corner
+ * cuts across it, so it needs to sit in from both edges.
+ *
+ * The margin goes on the outermost node only. These nest — the revealer holds
+ * the toast, the toast holds the card — and a margin on each would stack to
+ * three times the gap asked for here, which is what put the toast half a
+ * toast's height off the bottom edge.
+ */
+toast,
+.toast-revealer {
+  margin: 16px 20px;
+}
+
+.toast-revealer > toast,
+toast > .toast-card,
+.toast-revealer .toast-card {
+  margin: 0;
+}
+
+toast,
+.toast-card {
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+
+/* ---------- WC-1  Monochrome Minimal window controls ----------
+ * The theme painted coloured discs (#ff4245 / #ffd600 / #30d158) with a heavy
+ * bevel and hid the glyph with `color: transparent`. Selectors below mirror
+ * the theme's own specificity so that appending is enough to win.
+ */
+button.titlebutton,
+button.titlebutton.close,
+button.titlebutton.minimize,
+button.titlebutton.maximize,
+headerbar button.titlebutton,
+headerbar button.titlebutton.close,
+headerbar button.titlebutton.minimize,
+headerbar button.titlebutton.maximize,
+.csd headerbar button.titlebutton,
+.csd headerbar button.titlebutton.close,
+.csd headerbar button.titlebutton.minimize,
+.csd headerbar button.titlebutton.maximize,
+headerbar.default-decoration button.titlebutton,
+headerbar.default-decoration button.titlebutton.close,
+headerbar.default-decoration button.titlebutton.minimize,
+headerbar.default-decoration button.titlebutton.maximize,
+.csd headerbar.default-decoration button.titlebutton,
+.csd headerbar.default-decoration button.titlebutton.close,
+.csd headerbar.default-decoration button.titlebutton.minimize,
+.csd headerbar.default-decoration button.titlebutton.maximize,
+.titlebar button.titlebutton,
+.titlebar button.titlebutton.close,
+.titlebar button.titlebutton.minimize,
+.titlebar button.titlebutton.maximize,
+.csd .titlebar button.titlebutton,
+.csd .titlebar button.titlebutton.close,
+.csd .titlebar button.titlebutton.minimize,
+.csd .titlebar button.titlebutton.maximize,
+.titlebar.default-decoration button.titlebutton,
+.titlebar.default-decoration button.titlebutton.close,
+.titlebar.default-decoration button.titlebutton.minimize,
+.titlebar.default-decoration button.titlebutton.maximize,
+.csd .titlebar.default-decoration button.titlebutton,
+.csd .titlebar.default-decoration button.titlebutton.close,
+.csd .titlebar.default-decoration button.titlebutton.minimize,
+.csd .titlebar.default-decoration button.titlebutton.maximize,
+.solid-csd headerbar button.titlebutton,
+.solid-csd headerbar button.titlebutton.close,
+.solid-csd headerbar button.titlebutton.minimize,
+.solid-csd headerbar button.titlebutton.maximize,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.minimize,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.maximize {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  margin: 0 2px;
+  border-radius: 9999px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none;
+  color: alpha(currentColor, 0.6);
+}
+
+button.titlebutton:hover,
+button.titlebutton.close:hover,
+button.titlebutton.minimize:hover,
+button.titlebutton.maximize:hover,
+headerbar button.titlebutton:hover,
+headerbar button.titlebutton.close:hover,
+headerbar button.titlebutton.minimize:hover,
+headerbar button.titlebutton.maximize:hover,
+.csd headerbar button.titlebutton:hover,
+.csd headerbar button.titlebutton.close:hover,
+.csd headerbar button.titlebutton.minimize:hover,
+.csd headerbar button.titlebutton.maximize:hover,
+headerbar.default-decoration button.titlebutton:hover,
+headerbar.default-decoration button.titlebutton.close:hover,
+headerbar.default-decoration button.titlebutton.minimize:hover,
+headerbar.default-decoration button.titlebutton.maximize:hover,
+.csd headerbar.default-decoration button.titlebutton:hover,
+.csd headerbar.default-decoration button.titlebutton.close:hover,
+.csd headerbar.default-decoration button.titlebutton.minimize:hover,
+.csd headerbar.default-decoration button.titlebutton.maximize:hover,
+.titlebar button.titlebutton:hover,
+.titlebar button.titlebutton.close:hover,
+.titlebar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.maximize:hover,
+.csd .titlebar button.titlebutton:hover,
+.csd .titlebar button.titlebutton.close:hover,
+.csd .titlebar button.titlebutton.minimize:hover,
+.csd .titlebar button.titlebutton.maximize:hover,
+.titlebar.default-decoration button.titlebutton:hover,
+.titlebar.default-decoration button.titlebutton.close:hover,
+.titlebar.default-decoration button.titlebutton.minimize:hover,
+.titlebar.default-decoration button.titlebutton.maximize:hover,
+.csd .titlebar.default-decoration button.titlebutton:hover,
+.csd .titlebar.default-decoration button.titlebutton.close:hover,
+.csd .titlebar.default-decoration button.titlebutton.minimize:hover,
+.csd .titlebar.default-decoration button.titlebutton.maximize:hover,
+.solid-csd headerbar button.titlebutton:hover,
+.solid-csd headerbar button.titlebutton.close:hover,
+.solid-csd headerbar button.titlebutton.minimize:hover,
+.solid-csd headerbar button.titlebutton.maximize:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.minimize:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.maximize:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  background-image: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* Close is the only control that earns colour, and only under the pointer. */
+button.titlebutton.close:hover,
+headerbar button.titlebutton.close:hover,
+.csd headerbar button.titlebutton.close:hover,
+headerbar.default-decoration button.titlebutton.close:hover,
+.csd headerbar.default-decoration button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover,
+.csd .titlebar button.titlebutton.close:hover,
+.titlebar.default-decoration button.titlebutton.close:hover,
+.csd .titlebar.default-decoration button.titlebutton.close:hover,
+.solid-csd headerbar button.titlebutton.close:hover,
+.solid-csd headerbar:not(.default-decoration) button.titlebutton.close:hover {
+  background-color: #ff5f57;
+  background-image: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* Active & Checked states */
+button.titlebutton:active,
+button.titlebutton:checked,
+headerbar button.titlebutton:active,
+headerbar button.titlebutton:checked,
+.titlebar button.titlebutton:active,
+.titlebar button.titlebutton:checked,
+headerbar.default-decoration button.titlebutton:active,
+headerbar.default-decoration button.titlebutton:checked,
+.titlebar.default-decoration button.titlebutton:active,
+.titlebar.default-decoration button.titlebutton:checked,
+.solid-csd headerbar button.titlebutton:active,
+.solid-csd headerbar button.titlebutton:checked {
+  background-color: rgba(255, 255, 255, 0.24);
+  background-image: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+button.titlebutton.close:active,
+button.titlebutton.close:checked,
+headerbar button.titlebutton.close:active,
+headerbar button.titlebutton.close:checked,
+.titlebar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:checked,
+headerbar.default-decoration button.titlebutton.close:active,
+headerbar.default-decoration button.titlebutton.close:checked,
+.titlebar.default-decoration button.titlebutton.close:active,
+.titlebar.default-decoration button.titlebutton.close:checked,
+.solid-csd headerbar button.titlebutton.close:active,
+.solid-csd headerbar button.titlebutton.close:checked {
+  background-color: #e0443e;
+  background-image: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* The theme paints the macOS traffic lights on the image *inside* each button
+ * — `windowcontrols > button.close > image { background-color: #fd5f51 }` and
+ * friends — and blanks the button itself with `color: transparent`. Styling
+ * only the button, as everything above does, therefore changed nothing on
+ * GTK4: the coloured circles are a layer further in. GTK3 has no such child,
+ * which is why the rules above did land there and the two toolkits disagreed.
+ */
+headerbar button.titlebutton > image,
+.titlebar button.titlebutton > image,
+headerbar.default-decoration button.titlebutton > image,
+.titlebar.default-decoration button.titlebutton > image,
+windowcontrols > button > image,
+windowcontrols > button.close > image,
+windowcontrols > button.minimize > image,
+windowcontrols > button.maximize > image,
+windowcontrols.start > button.close > image,
+windowcontrols.start > button.minimize > image,
+windowcontrols.start > button.maximize > image,
+windowcontrols.end > button.close > image,
+windowcontrols.end > button.minimize > image,
+windowcontrols.end > button.maximize > image {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+windowcontrols > button.close > image:hover,
+windowcontrols > button.minimize > image:hover,
+windowcontrols > button.maximize > image:hover,
+windowcontrols.start > button.close > image:hover,
+windowcontrols.start > button.minimize > image:hover,
+windowcontrols.start > button.maximize > image:hover,
+windowcontrols.end > button.close > image:hover,
+windowcontrols.end > button.minimize > image:hover,
+windowcontrols.end > button.maximize > image:hover,
+windowcontrols > button.close > image:active,
+windowcontrols > button.minimize > image:active,
+windowcontrols > button.maximize > image:active,
+windowcontrols.start > button.close > image:active,
+windowcontrols.start > button.minimize > image:active,
+windowcontrols.start > button.maximize > image:active,
+windowcontrols.end > button.close > image:active,
+windowcontrols.end > button.minimize > image:active,
+windowcontrols.end > button.maximize > image:active {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* `color: transparent` on the button is what hides the symbolic glyph, so the
+ * glyph has to be given back before the monochrome control has anything to
+ * show. Specificity beats the theme's `windowcontrols > button.close`.
+ */
+headerbar windowcontrols > button.titlebutton,
+.titlebar windowcontrols > button.titlebutton,
+windowcontrols > button.titlebutton.close,
+windowcontrols > button.titlebutton.minimize,
+windowcontrols > button.titlebutton.maximize {
+  color: alpha(currentColor, 0.6);
+}
+
+headerbar windowcontrols > button.titlebutton:hover,
+.titlebar windowcontrols > button.titlebutton:hover,
+windowcontrols > button.titlebutton.close:hover,
+windowcontrols > button.titlebutton.minimize:hover,
+windowcontrols > button.titlebutton.maximize:hover {
+  color: #ffffff;
+}
+
+button.titlebutton:backdrop {
+  opacity: 0.45;
+}
+
+/* ---------- TG-1  Adwaita-native switches, checks, radios, sliders ----------
+ * Colour comes from @accent_bg_color, so these follow whatever accent is set
+ * in Settings rather than being pinned to a hardcoded macOS green.
+ */
+switch {
+  background-color: rgba(255, 255, 255, 0.18);
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+switch:checked {
+  background-color: @accent_bg_color;
+  background-image: none;
+}
+
+switch:disabled {
+  opacity: 0.5;
+}
+
+switch > slider,
+scale.horizontal > trough > slider,
+scale.marks-after > trough > slider {
+  background-color: #ffffff;
+  background-image: none;
+  min-width: 20px;
+  min-height: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+/* The theme scaled the knob to 1.8x on press, which is what made these read as
+ * a novelty rather than a control.
+ */
+switch > slider:active,
+scale.horizontal > trough > slider:active,
+scale.marks-after > trough > slider:active {
+  transform: none;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+check {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.06);
+  background-image: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+  min-width: 18px;
+  min-height: 18px;
+  -gtk-icon-size: 14px;
+  color: transparent;
+  -gtk-icon-source: none;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+radio {
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.06);
+  background-image: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+  min-width: 18px;
+  min-height: 18px;
+  -gtk-icon-size: 14px;
+  color: transparent;
+  -gtk-icon-source: none;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+check:hover,
+radio:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
+check:active,
+radio:active {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.60);
+}
+
+/* The glyph is named rather than drawn, so the names have to be ones the icon
+ * theme actually ships. These four are the ones GTK itself asks for, which is
+ * what makes them safe across icon packs — Adwaita and Reversal both carry all
+ * of them. An unknown name is not an error: it draws nothing, and a checked box
+ * that renders as a filled accent square with no tick looks like a bug in the
+ * app rather than a missing icon.
+ */
+check:checked {
+  background-color: @accent_bg_color;
+  background-image: none;
+  border-color: @accent_bg_color;
+  color: @accent_fg_color;
+  -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
+}
+
+check:checked:hover {
+  background-color: color-mix(in srgb, @accent_bg_color 88%, white);
+  border-color: color-mix(in srgb, @accent_bg_color 88%, white);
+}
+
+check:indeterminate {
+  background-color: @accent_bg_color;
+  background-image: none;
+  border-color: @accent_bg_color;
+  color: @accent_fg_color;
+  -gtk-icon-source: -gtk-icontheme("checkbox-mixed-symbolic");
+}
+
+radio:checked {
+  background-color: @accent_bg_color;
+  background-image: none;
+  border-color: @accent_bg_color;
+  color: @accent_fg_color;
+  -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
+}
+
+radio:checked:hover {
+  background-color: color-mix(in srgb, @accent_bg_color 88%, white);
+  border-color: color-mix(in srgb, @accent_bg_color 88%, white);
+}
+
+radio:indeterminate {
+  background-color: @accent_bg_color;
+  background-image: none;
+  border-color: @accent_bg_color;
+  color: @accent_fg_color;
+  -gtk-icon-source: -gtk-icontheme("radio-mixed-symbolic");
+}
+
+/* ---------- Popover menus (Nautilus view options, context menus) ---------- */
+popover.menu check,
+popover.menu radio {
+  min-width: 16px;
+  min-height: 16px;
+  -gtk-icon-size: 14px;
+  padding: 0;
+  margin-right: 8px;
+}
+
+popover.menu check:not(:checked):not(:indeterminate),
+popover.menu radio:not(:checked):not(:indeterminate) {
+  background-color: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  color: transparent;
+  -gtk-icon-source: none;
+}
+
+popover.menu check:not(:checked):not(:indeterminate):hover,
+popover.menu radio:not(:checked):not(:indeterminate):hover {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+popover.menu check:checked,
+popover.menu radio:checked {
+  background-color: @accent_bg_color;
+  border-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+scale > trough {
+  background-color: rgba(255, 255, 255, 0.18);
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+scale > trough > highlight {
+  background-color: @accent_bg_color;
+  background-image: none;
+  border: none;
+}
+
+/* Settings -> Appearance accent colour swatches and style preview buttons.
+ * The universal reset `* { box-shadow: none }` in gtk4-00-flat.css
+ * strips their selection ring; re-assert it so the active choice is visible.
+ */
+.accent-button:checked {
+  box-shadow: 0 0 0 3px @accent_bg_color;
+}
+
+.accent-button:focus:focus-visible {
+  box-shadow: 0 0 0 3px alpha(@accent_bg_color, 0.30);
+}
+
+.accent-button:checked:focus:focus-visible {
+  box-shadow: 0 0 0 3px @accent_bg_color,
+              0 0 0 6px alpha(@accent_bg_color, 0.30);
+}
+
+.background-preview-button:checked {
+  box-shadow: 0 0 0 3px @accent_bg_color;
+}
+
+.background-preview-button:focus:focus-visible {
+  box-shadow: 0 0 0 3px alpha(@accent_bg_color, 0.30);
+}
+
+.background-preview-button:checked:focus:focus-visible {
+  box-shadow: 0 0 0 3px @accent_bg_color,
+              0 0 0 6px alpha(@accent_bg_color, 0.30);
+}
+
+/* ---------- Nautilus floating status bar ----------
+ * The "N items selected" badge that appears over the file list on hover. The
+ * theme gives it its own treatment — rgba(0, 0, 0, 0.6) plus a pair of white
+ * inset highlights (`inset 2px 2px 2px -2.8px rgba(255,255,255,0.8)` and its
+ * mirror) — so it carried the lit edge every other surface has lost, and read
+ * as a different material from the rest of the desktop.
+ *
+ * It floats over file content rather than over a blurred surface, so it takes
+ * the near-solid ground `.notification-banner` uses in the shell for the same
+ * reason: whatever is behind it is arbitrary, and legibility wins.
+ */
+.floating-bar,
+box.floating-bar,
+box.bottom.floating-bar,
+.floating-bar.bottom {
+  background-color: rgba(22, 23, 27, 0.86);
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  box-shadow: none;
+  color: #ffffff;
+  padding: 4px 14px;
+  margin: 6px;
+}
+
+/* ---------- Popover menus ----------
+ * The dropdown from a menubutton — the "Kill App / Halt App" menu in
+ * Resources, and every app menu like it. The theme gave it rgba(0, 0, 0, 0.92)
+ * with the white gradient and inset highlights that the blocks above now strip,
+ * so what was left was a fill and a radius on no particular ladder, and menu
+ * items with no hover treatment of their own.
+ *
+ * Near-solid rather than the glass used for shell menus, and deliberately so:
+ * Blur My Shell blurs shell surfaces only, never an app's own popovers, so a
+ * translucent fill here would show the app underneath rather than a blur —
+ * muddy, not glassy. The tone matches the shell's material; the opacity is what
+ * the absence of blur forces.
+ *
+ * Items take the same 0.16 / 0.22 hover and active steps as the shell.
+ */
+popover,
+popover.background {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+popover > contents,
+popover.menu > contents {
+  background-color: rgba(22, 23, 27, 0.96);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: none;
+  padding: 6px;
+}
+
+/* The arrow takes the same hairline as the body it points out of. Left at
+ * `none` while the body carries one, the two meet in a visible seam where the
+ * body's edge stops and the arrow's begins.
+ */
+popover > arrow {
+  background-color: rgba(22, 23, 27, 0.96);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+popover modelbutton,
+popover.menu modelbutton {
+  min-height: 30px;
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+popover modelbutton:hover,
+popover.menu modelbutton:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+popover modelbutton:active,
+popover.menu modelbutton:active {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+popover modelbutton check,
+popover modelbutton radio,
+popover.menu modelbutton check,
+popover.menu modelbutton radio {
+  margin-right: 8px;
+}
+
+
+/* ---------- Dialogs and in-app modal cards ----------
+ * Message dialogs, in-app confirmation prompts and the modal cards apps build
+ * out of a frame over a scrim. A dialog exists to be read and answered, so it
+ * takes the near-solid ground rather than the glass: over a busy window a
+ * translucent one is genuinely harder to read, and the desktop showing through
+ * a question is worse than the question looking heavy.
+ *
+ * This sheet owns them outright, for the same reason it owns popovers —
+ * gtk4-transparency.css deliberately does not restate them. It is appended
+ * after this one, so a copy there would silently win, and the dialog would look
+ * one way with --app-transparency and another way without for no reason a user
+ * could see.
+ */
+.lockout-card,
+.question-layer,
+frame.background.dialog-overlay,
+frame.dialog-overlay,
+dialog > contents,
+window.dialog .dialog-vbox,
+window.dialog.message .dialog-vbox,
+window.messagedialog .background {
+  background-color: rgba(24, 25, 30, 0.98);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.lockout-scrim {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* ---------- Tooltips ----------
+ * `window > tooltip.background` carried the same mirrored white inset pair as
+ * the floating bar, so the little "Current Folder Menu" label had a lit edge
+ * while everything around it had lost one. Same material as popover menus:
+ * near-solid, because a tooltip floats over app content that is never blurred.
+ */
+tooltip,
+tooltip.background,
+window > tooltip.background {
+  background-color: rgba(22, 23, 27, 0.96);
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  box-shadow: none;
+  color: #ffffff;
+  padding: 4px 10px;
+}
+
+tooltip > box,
+tooltip label {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+/* ---------- Server-side decoration frames (XWayland, Chrome, Electron) ----------
+ * XWayland windows do not draw their own titlebar — /usr/lib/mutter-x11-frames
+ * does, in a separate process that loads plain GTK4. Upstream Tahoe-Dark sets
+ * `window headerbar { background-color: transparent }`, which blanks the frame
+ * while the app's own content below stays opaque, making the window look sliced
+ * in two at the titlebar. Chrome's profile picker, Steam, and Discord are the
+ * clearest cases.
+ *
+ * Decoration frames must stay solid.
+ */
+headerbar.default-decoration,
+headerbar.default-decoration.titlebar,
+.titlebar.default-decoration,
+headerbar.default-decoration:backdrop,
+.titlebar.default-decoration:backdrop,
+window.solid-csd,
+window.solid-csd .background,
+window.solid-csd headerbar {
+  background-color: @headerbar_bg_color;
+  background-color: var(--headerbar-bg-color, @headerbar_bg_color);
+}
+
+/* aura-glass — translucent app windows, so the blur behind them is visible.
+ *
+ * Appended after gtk4-tweaks.css, and only installed when --app-transparency
+ * asked for it.
+ *
+ * Blur My Shell's [applications] blur has never had anything to show through:
+ * libadwaita paints opaque grounds, so the blur sat behind a solid window and
+ * the only "transparency" available was opacity=240 on the window actor —
+ * which dims the text along with everything else. This makes the surfaces
+ * libadwaita actually paints translucent instead, so what you see behind a
+ * window is the blur rather than a dimmed copy of the window.
+ *
+ * Every rule is written twice, and the order is load-bearing.
+ * alpha(@window_bg_color, N) is the named-colour form: deprecated since
+ * libadwaita 1.6 and gone from the 1.9 docs, but still resolving through a
+ * back-compat shim. color-mix(in srgb, var(--window-bg-color) N%, transparent)
+ * is the form that survives that shim being removed. Both are present in
+ * libadwaita 1.9.2, and writing the old spelling first means the new one wins
+ * wherever GTK understands it.
+ *
+ * That pairing is only safe because of the :root block below. `var()` is not a
+ * parse error when the property is undefined — GTK parses it happily and fails
+ * at computed-value time, which sets the property to its initial value rather
+ * than falling back to the previous declaration. For background-color the
+ * initial value is transparent. So in any GTK4 app that is not a libadwaita
+ * app, and therefore never defines these properties, the second declaration
+ * won and painted nothing at all.
+ *
+ * That is not a corner case: /usr/lib/mutter-x11-frames draws the titlebar of
+ * every XWayland window, in its own process, with plain GTK4 — so those frames
+ * went fully transparent while the app's own content stayed opaque, and the
+ * window looked sliced in two. Chrome and Vesktop were the visible cases;
+ * any non-libadwaita GTK4 app was affected.
+ *
+ * The percentages below are the shipped level, 0.92. --app-transparency N
+ * rewrites them in the installed copy, keeping the ladder between surfaces
+ * rather than flattening every one of them to the same number.
+ */
+
+/* Bridge the libadwaita named colours to the custom properties the rules below
+ * use, so `var()` resolves outside libadwaita too. The values are not repeated
+ * here — each maps to the @define-color the theme already set, so there is one
+ * source and nothing to drift. adw-gtk3 does the same thing in its
+ * libadwaita-tweaks.css for the same reason.
+ */
+:root {
+  --window-bg-color: @window_bg_color;
+  --view-bg-color: @view_bg_color;
+  --sidebar-bg-color: @sidebar_bg_color;
+  --headerbar-bg-color: @headerbar_bg_color;
+  --headerbar-backdrop-color: @headerbar_backdrop_color;
+}
+
+/* ---------- Darkened grounds ----------
+ * A translucent window shows whatever is behind it. With Blur My Shell that is
+ * a blur, and the theme's own ground at 92% reads as glass over it. With
+ * --no-blur it is the wallpaper, at full brightness and full detail, and the
+ * same 92% reads as a washed-out window with the desktop printed through the
+ * text.
+ *
+ * So the ground is mixed toward black before the alpha is applied. Darkening
+ * and thinning are opposite knobs: --app-transparency sets how much shows
+ * through, and this sets how dark what remains is, which is what keeps text
+ * legible as the first one goes up.
+ *
+ * The percentage is the share of the theme's own colour that survives the mix;
+ * the rest is black. It is TOKEN_APP_TINT in tokens/tokens.sh, and
+ * tools/check-tokens.sh asserts both spellings here still agree with it.
+ *
+ * Written in both spellings for the same reason as everything below: the
+ * named-colour form for the libadwaita shim, the color-mix form for when that
+ * shim goes. mix()'s third argument is the weight of the *second* colour, so
+ * it is the complement of the color-mix percentage.
+ */
+@define-color tg_tint_window mix(@window_bg_color, #000000, 0.55);
+@define-color tg_tint_view mix(@view_bg_color, #000000, 0.55);
+@define-color tg_tint_sidebar mix(@sidebar_bg_color, #000000, 0.55);
+@define-color tg_tint_headerbar mix(@headerbar_bg_color, #000000, 0.55);
+@define-color tg_tint_headerbar_backdrop mix(@headerbar_backdrop_color, #000000, 0.55);
+
+:root {
+  --tg-tint-window: color-mix(in srgb, var(--window-bg-color) 45%, #000000);
+  --tg-tint-view: color-mix(in srgb, var(--view-bg-color) 45%, #000000);
+  --tg-tint-sidebar: color-mix(in srgb, var(--sidebar-bg-color) 45%, #000000);
+  --tg-tint-headerbar: color-mix(in srgb, var(--headerbar-bg-color) 45%, #000000);
+  --tg-tint-headerbar-backdrop: color-mix(in srgb, var(--headerbar-backdrop-color) 45%, #000000);
+}
+
+/* ---------- Why the inner panes are transparent ----------
+ * libadwaita paints the window, then the content pane inside it, then the view
+ * inside that. Giving each its own translucent ground stacks three of them, and
+ * alpha compounds: three surfaces at 0.8 leave about 0.008 of what is behind
+ * showing through, so the window reads as opaque however far the level is
+ * lowered. Lowering it far enough to see through all three would leave the
+ * headerbar and sidebar, which are single-layered, almost gone.
+ *
+ * So exactly one layer carries the material. The window is translucent and
+ * tinted, and the panes inside it paint nothing, which is what makes the level
+ * mean what it says: at 0.8 you are looking through one surface at 0.8, not
+ * through three.
+ *
+ * The sidebar and header bar keep their own values because neither sits on top
+ * of the window's ground — libadwaita gives them their own region — so they do
+ * not compound with it.
+ */
+
+/* ---------- The window itself ----------
+ * libadwaita paints .background rather than window on most widgets, but
+ * AdwWindow sets both and older dialogs only set window.
+ */
+window,
+window.background,
+.background,
+windowhandle {
+  background-color: alpha(@tg_tint_window, 0.90);
+  background-color: color-mix(in srgb, var(--tg-tint-window) 90%, transparent);
+}
+
+/* Server-side decorations paint an opaque frame around the window. Letting the
+ * window under it go translucent shows the frame through the content, which
+ * reads as a rendering bug rather than as glass.
+ */
+window.solid-csd,
+window.solid-csd .background {
+  background-color: @window_bg_color;
+  background-color: var(--tg-tint-window);
+}
+
+/* ---------- Header bars and decoration frames stay solid ----------
+ * The top bar must stay 100% solid across all applications (Chrome, Vesktop/Electron,
+ * GTK3, GTK4, XWayland). Translucent headerbars cause transparent gaps, middle-band
+ * see-through, and trailing smear ("tail") artifacts when dragging windows.
+ */
+headerbar,
+headerbar windowhandle,
+headerbar.titlebar,
+headerbar.titlebar windowhandle,
+.titlebar,
+.titlebar windowhandle,
+window > windowhandle,
+window > headerbar.titlebar,
+window.background > headerbar.titlebar,
+window.background > windowhandle,
+headerbar.default-decoration,
+headerbar.default-decoration.titlebar,
+.titlebar.default-decoration {
+  background-color: @headerbar_bg_color;
+  background-color: var(--headerbar-bg-color);
+}
+
+headerbar:backdrop,
+headerbar:backdrop windowhandle,
+.titlebar:backdrop,
+.titlebar:backdrop windowhandle,
+window:backdrop > windowhandle,
+window:backdrop > headerbar.titlebar,
+window.background:backdrop > headerbar.titlebar,
+window.background:backdrop > windowhandle,
+headerbar.default-decoration:backdrop,
+.titlebar.default-decoration:backdrop {
+  background-color: @headerbar_backdrop_color;
+  background-color: var(--headerbar-backdrop-color);
+}
+
+/* ---------- In-window toolbars, searchbars, actionbars ---------- */
+toolbarview > .toolbar,
+.toolbar,
+searchbar > revealer > box,
+actionbar > revealer > box {
+  background-color: alpha(@tg_tint_headerbar, 0.85);
+  background-color: color-mix(in srgb, var(--tg-tint-headerbar) 85%, transparent);
+}
+
+toolbarview > .toolbar:backdrop,
+.toolbar:backdrop,
+searchbar:backdrop > revealer > box,
+actionbar:backdrop > revealer > box {
+  background-color: alpha(@tg_tint_headerbar_backdrop, 0.85);
+  background-color: color-mix(in srgb, var(--tg-tint-headerbar-backdrop) 85%, transparent);
+}
+
+/* The headerbar's bottom border goes transparent: the difference in opacity
+ * between header and window body is already enough to tell them apart, and a
+ * hard hairline across a translucent surface breaks the glass effect.
+ */
+headerbar,
+headerbar.default-decoration {
+  border-bottom-color: transparent;
+}
+
+/* ---------- Split-view panes ----------
+ * AdwNavigationSplitView and AdwOverlaySplitView paint their own opaque
+ * grounds. Without these the window is translucent everywhere except the
+ * sidebar, which looks worse than either extreme.
+ *
+ * .navigation-sidebar stays in this list even though gtk4-40-containers.css
+ * turns it transparent inside a .sidebar-pane. Not every app wraps one — an
+ * AdwNavigationSplitView provides the pane, a plain sidebar in a box does not —
+ * so dropping the bare selector left those apps with no tinted sidebar at all,
+ * just the window showing through where the sidebar should be. That scoped rule
+ * is two classes to this one's one, so it still wins wherever a pane is there.
+ */
+.sidebar-pane,
+.navigation-sidebar,
+stacksidebar,
+placessidebar {
+  background-color: alpha(@tg_tint_sidebar, 0.75);
+  background-color: color-mix(in srgb, var(--tg-tint-sidebar) 75%, transparent);
+}
+
+/* The pane above carries the tint for this whole region, so everything
+ * libadwaita paints inside it paints nothing — otherwise the header bar's own
+ * 0.88 and the pane's 0.80 compound and the sidebar reads denser than the
+ * window it sits in. The navigation list inside the pane is handled in
+ * gtk4-40-containers.css, which is always installed.
+ *
+ * Scoped headerbars and toolbars in split-view panes (like Files/Nautilus)
+ * and toolbarviews stay transparent in both focused and backdrop/unfocused
+ * states, preventing a solid background from appearing when the window is unfocused.
+ */
+.sidebar-pane headerbar,
+.sidebar-pane headerbar windowhandle,
+.sidebar-pane headerbar:backdrop,
+.sidebar-pane headerbar:backdrop windowhandle,
+.sidebar-pane toolbarview,
+.sidebar-pane toolbarview:backdrop,
+.sidebar-pane toolbarview > .toolbar,
+.sidebar-pane toolbarview > .toolbar:backdrop,
+.sidebar-pane toolbarview > revealer.top-bar,
+.sidebar-pane toolbarview > revealer.top-bar:backdrop,
+.sidebar-pane toolbarview > revealer.bottom-bar,
+.sidebar-pane toolbarview > revealer.bottom-bar:backdrop,
+.sidebar-pane .navigation-sidebar,
+.sidebar-pane list.navigation-sidebar,
+.sidebar-pane placessidebar,
+.sidebar-pane stacksidebar,
+.sidebar-pane placesview,
+.sidebar-pane placesview list,
+.sidebar-pane listview,
+.sidebar-pane list,
+.sidebar-pane scrolledwindow,
+.sidebar-pane viewport,
+.content-pane headerbar,
+.content-pane headerbar windowhandle,
+.content-pane headerbar:backdrop,
+.content-pane headerbar:backdrop windowhandle,
+.content-pane toolbarview > .toolbar,
+.content-pane toolbarview > .toolbar:backdrop,
+.content-pane toolbarview > revealer.top-bar,
+.content-pane toolbarview > revealer.top-bar:backdrop,
+navigation-split-view headerbar,
+navigation-split-view headerbar windowhandle,
+navigation-split-view headerbar:backdrop,
+navigation-split-view headerbar:backdrop windowhandle,
+overlay-split-view headerbar,
+overlay-split-view headerbar windowhandle,
+overlay-split-view headerbar:backdrop,
+overlay-split-view headerbar:backdrop windowhandle,
+toolbarview headerbar,
+toolbarview headerbar windowhandle,
+toolbarview headerbar:backdrop,
+toolbarview headerbar:backdrop windowhandle,
+headerbar.flat,
+headerbar.flat windowhandle,
+headerbar.flat:backdrop,
+headerbar.flat:backdrop windowhandle,
+headerbar.tweak-titlebar-left,
+headerbar.tweak-titlebar-left windowhandle,
+headerbar.tweak-titlebar-left:backdrop,
+headerbar.tweak-titlebar-left:backdrop windowhandle,
+headerbar.tweak-titlebar-right,
+headerbar.tweak-titlebar-right windowhandle,
+headerbar.tweak-titlebar-right:backdrop,
+headerbar.tweak-titlebar-right:backdrop windowhandle,
+toolbarview windowhandle,
+toolbarview windowhandle:backdrop,
+toolbarview > revealer.top-bar > windowhandle,
+toolbarview > revealer.top-bar > windowhandle:backdrop {
+  background-color: transparent;
+  background-image: none;
+}
+
+.content-pane,
+#right_box,
+#right_box scrolledwindow,
+#right_box viewport,
+#right_box stack.background,
+#main_stack,
+#main_stack.background,
+.tweak-group {
+  background-color: transparent;
+}
+
+/* ---------- Content views ----------
+ * .view is the ground under lists, grids and text. Left denser than the
+ * window on purpose: this is where text is actually read.
+ */
+.view,
+textview.view > text,
+columnview > listview,
+gridview,
+scrolledwindow > viewport > .view {
+  background-color: transparent;
+}
+
+/* Popovers are deliberately absent from this sheet.
+ *
+ * They were here, at 0.94, and because this sheet is appended after
+ * gtk4-tweaks.css they silently overrode the near-solid ground that sheet sets
+ * for them — so a popover looked one way with --app-transparency and another
+ * way without, for no reason a user could see.
+ *
+ * gtk4-tweaks.css owns them, and the reasoning does not depend on this flag:
+ * Blur My Shell blurs shell surfaces only, never an app's own popovers, so
+ * translucency there shows the app underneath rather than a blur. There is
+ * nothing for a popover to be translucent *against*.
+ */
+
+/* Dialogs and in-app modal cards are deliberately absent from this sheet, for
+ * exactly the reason popovers are.
+ *
+ * They were here, and because this sheet is appended after the others they
+ * silently overrode the near-solid ground gtk4-70-surfaces.css sets — so the
+ * fill written there never painted, and a dialog looked one way with
+ * --app-transparency and another way without.
+ *
+ * gtk4-70-surfaces.css owns them, and the reasoning does not depend on this
+ * flag: a dialog exists to be read and answered, and a translucent one over a
+ * busy window is harder to read whatever the rest of the window is doing.
+ */
+/* >>> aura-glass END <<< */
+
+/* DING desktop window: transparent over aura-glass (GTK CSS has no !important; id selectors win) */
+window#desktopwindow,
+window#desktopwindow windowhandle,
+window#desktopwindow .background,
+window#desktopwindow overlay,
+window#desktopwindow scrolledwindow,
+window#desktopwindow viewport,
+window#desktopwindow fixed,
+window#desktopwindow grid,
+window#desktopwindow box,
+window#testwindow {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+/* DING icon click effect */
+window#desktopwindow .desktop-icon-container { transition: transform 120ms ease-out, opacity 120ms; }
+window#desktopwindow .desktop-icon-container:hover { transform: scale(1.06); }
+window#desktopwindow .desktop-icon-container:active { transform: scale(0.92); opacity: 0.85; }
